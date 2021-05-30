@@ -54,6 +54,23 @@ $_SESSION[ 'csrf' ] = $key;
 	<link href="<?php echo GP_LOCATE; ?>lang/en/lang.css?f4b7d" rel="stylesheet" type="text/css" />
 	<link href="<?php echo GP_LOCATE ?>travian.css?f4b7d" rel="stylesheet" type="text/css" />
 		<link href="<?php echo GP_LOCATE ?>lang/en/lang.css" rel="stylesheet" type="text/css" />
+		<script>
+			function connectWallet() {
+				if (typeof window.ethereum !== 'undefined') {
+					const res = ethereum.request({ method: 'eth_requestAccounts' });
+					res.then((acc) => {
+						document.getElementById('btn_login').style.display = "";
+						document.getElementById('login_form').style.display = "";
+						document.getElementById('wallet_id').innerText = acc[0];
+						document.getElementById('btn_connect').style.display = "none";
+					}).catch((err) =>{
+						// document.getElementById('btn_login').style.display = "";
+						// document.getElementById('login_form').style.display = "";
+						// document.getElementById('btn_connect').style.display = "none";
+					})
+				}
+			}
+		</script>
 	   </head>
 
 <body class="v35 ie ie7" onload="initCounter()">
@@ -180,8 +197,12 @@ Element.implement({
 	}
 });
 </script>
-<table cellpadding="1" cellspacing="1" id="login_form">
+<table cellpadding="1" cellspacing="1" id="login_form" style="display:none">
 	<tbody>
+		<tr class="top">
+			<th>Wallet ID</th>
+			<td><span id="wallet_id"></span></td>
+		</tr>
 		<tr class="top">
 			<th><?php echo NAME; ?></th>
 			<td><input class="text" type="text" name="user" value="<?php echo stripslashes(stripslashes(stripslashes($form->getDiff("user",$_COOKIE['COOKUSR'])))); ?>" maxlength="30" autocomplete='off' /> <span class="error"> <?php echo $form->getError("user"); ?></span></td>
@@ -195,7 +216,12 @@ Element.implement({
 
 <p class="btn">
 	<!--<input type="hidden" name="e1d9d0c" value="" />-->
-		<button value="login" name="s1"	onclick="xy();" id="btn_login" class="trav_buttons" alt="login button"	/> Login </button>
+		<button value="login" name="s1"	onclick="xy();" id="btn_login" class="trav_buttons" alt="login button" style="display:none"/> Login </button>
+</p>
+<p class="btn">
+	<!--<input type="hidden" name="e1d9d0c" value="" />-->
+		<input type="button" class="trav_buttons" onclick="connectWallet()" value="Connect Wallet" id="btn_connect">
+		
 </p>
 
 </form>
