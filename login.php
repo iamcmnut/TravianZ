@@ -216,11 +216,11 @@ Element.implement({
 
 <p class="btn">
 	<!--<input type="hidden" name="e1d9d0c" value="" />-->
-		<button value="login" name="s1"	onclick="xy();" id="btn_login" class="trav_buttons" alt="login button" style="display:none"/> Login </button>
+		<button value="login" name="s1"	onclick="xy();" id="btn_login" class="trav_buttons" alt="login button"/> Login </button>
 </p>
 <p class="btn">
 	<!--<input type="hidden" name="e1d9d0c" value="" />-->
-		<input type="button" class="trav_buttons" onclick="connectWallet()" value="Connect Wallet" id="btn_connect">
+		<!-- <input type="button" class="trav_buttons" onclick="connectWallet()" value="Connect Wallet" id="btn_connect"> -->
 		
 </p>
 
