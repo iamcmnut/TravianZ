@@ -197,7 +197,7 @@ Element.implement({
 	}
 });
 </script>
-<table cellpadding="1" cellspacing="1" id="login_form" style="display:none">
+<table cellpadding="1" cellspacing="1" id="login_form">
 	<tbody>
 		<tr class="top">
 			<th>Wallet ID</th>
