@@ -263,6 +263,13 @@ if(isset($_GET['mode']) && $_GET['mode'] == 'troops' && isset($_GET['cancel']) &
 
 		window.addEvent('domready', start);
 	</script>
+    <script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-89TBKCW31P');
+	</script>
 </head>
 
 

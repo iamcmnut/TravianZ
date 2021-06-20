@@ -29,6 +29,13 @@ AccessLogger::logRequest();
 	<style type="text/css" media="screen">
 
 	</style>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-89TBKCW31P');
+	</script>
 </head>
 <body class="webkit contentPage">
 <div class="wrapper">
